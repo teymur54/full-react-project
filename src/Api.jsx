@@ -10,7 +10,7 @@ const Api = () => {
       try { 
         const token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0IiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfRURJVE9SIl0sImlhdCI6MTcwMDIwMDE4OSwiZXhwIjoxNzAwMjI4OTg5fQ.r1zEtip6rb5KQc2-a45_xZxLablrL1iEH0xedoMDpPc'; 
         const response = await axios.get(
-          'http://172.16.7.222:8080/api/v1/allEmployees', 
+          'http://172.16.4.226:8080/api/v1/allEmployees', 
         {
           headers: {
             'Content-Type': 'application/json',

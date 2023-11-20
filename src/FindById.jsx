@@ -8,7 +8,7 @@ const FindById = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://172.16.7.34:8080/api/employees/48');
+        const response = await axios.get('http://172.16.4.226:8080/api/employees/48');
         setData(response.data);
       } catch (error) {
         setError(error);

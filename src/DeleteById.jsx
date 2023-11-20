@@ -5,7 +5,7 @@ const DeleteById = ({ employee, handleDelete }) => {
   return (
     <div>
       <span>
-        <button onClick={() => handleDelete(employee.id)}>Delete</button>
+        <button onClick={() => handleDelete(employee.id)}className='delete-button'>Delete</button>
       </span>
       <br />
     </div>

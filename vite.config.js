@@ -6,3 +6,4 @@ export default defineConfig({
   plugins: [react()],
   server: {host: '0.0.0.0'}
 })
+//http://172.16.7.222:5173/

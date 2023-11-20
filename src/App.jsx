@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Post from './Post';
 import AllEmployees from './AllEmployees';
 import DeleteById from './DeleteById';
+import UpdateById from './UpdateById';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path='/post' element={<Post />} />
         <Route path='/employees' element={<AllEmployees />} />
         <Route path='/delete' element={<DeleteById />} /> 
+        <Route path='/update/:id' element={<UpdateById />} />
       </Routes>
     </Router>
   );

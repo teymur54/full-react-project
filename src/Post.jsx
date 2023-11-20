@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
-
+import './Post.css';
 
 const Post = () => {
   const [firstName, setFirstName] = useState('');
@@ -18,35 +18,46 @@ const Post = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post('http://172.16.7.34:8080/api/add', {
+      const response = await axios.post('http://172.16.4.226:8080/api/add', {
         firstName,
         lastName,
       });
-      // Clear the input fields on successful submission
       setFirstName('');
       setLastName('');
-      // Handle the response data if needed
       console.log('Response:', response.data);
     } catch (error) {
       setError(error);
     }
   };
+
   return (
     <div className="form-container">
       <form onSubmit={handleSubmit}>
-        <label>
-          First name:
-          <input type="text" value={firstName} onChange={handleFirstNameChange}/>
+        <label className="form-label">
+          <span className="label-text">First name:</span>
+          <input
+            className="form-input"
+            type="text"
+            value={firstName}
+            onChange={handleFirstNameChange}
+          />
         </label>
-        <label>
-          Last Name:
-          <input type="text" value={lastName} onChange={handleLastNameChange}/>
+        <label className="form-label">
+          <span className="label-text">Last name:</span>
+          <input
+            className="form-input"
+            type="text"
+            value={lastName}
+            onChange={handleLastNameChange}
+          />
         </label>
         <br />
-        <button type='submit'>Submit</button>
+        <button className="submit-button" type="submit">
+          Submit
+        </button>
       </form>
     </div>
-  )
-}
+  );
+};
 
 export default Post;
