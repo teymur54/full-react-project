@@ -1,0 +1,44 @@
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul > div {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+ul > div > br {
+  display: none; /* Hide line breaks */
+}
+
+ul > div > span {
+  font-weight: bold;
+}
+
+.employee-container {
+  margin-bottom: 20px;
+  padding: 8px 10px 0px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.name-section,
+.surname-section {
+  margin-bottom: 10px;
+}
+
+.name-section span,
+.surname-section span {
+  font-weight: bold;
+}
+
+/* Additional styling to differentiate sections */
+.surname-section {
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
