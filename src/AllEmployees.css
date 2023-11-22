@@ -90,6 +90,10 @@ ul {
   transition: transform 0.3s ease-in-out; /* Add transition effect to buttons */
 }
 
+.delete-button {
+  background-color: red;
+}
+
 /* Media Queries for Responsive Design */
 @media (max-width: 1200px) {
   .employee-container {

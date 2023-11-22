@@ -7,17 +7,18 @@ import UpdateById from './UpdateById';
 import { Link } from 'react-router-dom';
 
 const AllEmployees = () => {
-  const navigate = useNavigate();
+const navigate = useNavigate();
   const [employeeData, setEmployeeData] = useState([]);
   const [error, setError] = useState(null);
   const [paginationInfo, setPaginationInfo] = useState({ currentPage: 0, totalPages: 0, sortBy: 'lastName' });
   const [pageSize, setPageSize] = useState(5); // Default page size
+  const [findEmployeeName, setFindEmployeeName] = useState('');
 
   const pageSizeOptions = [5, 10, 15, 20]; // Page size options for the dropdown
 
-  const fetchData = async (pageNumber, size, sortBy) => {
+  const fetchData = async (pageNumber, size, sortBy, name) => {
     try {
-      const response = await axios.get(`http://172.16.4.226:8080/api/pageEmployees?pageSize=${size}&pageNumber=${pageNumber}&sortBy=${sortBy}`);
+      const response = await axios.get(`http://172.16.4.226:8080/api/pageEmployees?pageSize=${size}&pageNumber=${pageNumber}&sortBy=${sortBy}&name=${name}`);
       setEmployeeData(response.data.content); // Update the employee data
       setPaginationInfo({
         currentPage: response.data.number,
@@ -30,8 +31,8 @@ const AllEmployees = () => {
   };
 
   useEffect(() => {
-    fetchData(0, pageSize, paginationInfo.sortBy); // Fetch initial data for the first page with default page size and sorting
-  }, [pageSize, paginationInfo.sortBy]);
+    fetchData(0, pageSize, paginationInfo.sortBy, findEmployeeName); // Fetch initial data
+  }, [pageSize, paginationInfo.sortBy, findEmployeeName]);
 
   const handleDelete = async (id) => {
     try {
@@ -105,6 +106,15 @@ const AllEmployees = () => {
               </div>
               <div className="surname-section">
                 <span>Surname:</span> {item.lastName}
+              </div>
+              <div className='surname-section'>
+                <span>Department:</span> {item.department.name}
+              </div>
+              <div className='surname-section'>
+                <span>Position:</span> {item.position.name}
+              </div>
+              <div className='surname-section'>
+                <span>Rank:</span> {item.rank.name}
               </div>
               <div key={item.id} className='buttons-div'>
                 <Link to={`/update/${item.id}`}>

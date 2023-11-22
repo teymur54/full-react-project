@@ -1,9 +1,13 @@
+body{
+  background-color: rgb(215, 255, 215);
+}
 .navbar {
-  background-color: #333;
+  background-color: #00748E;
   padding: 10px;
   display: flex;
   justify-content: center;
-  height: 40px;
+  height: 34px;
+  border-radius: 30px;
 }
 
 .nav-link {
@@ -14,6 +18,7 @@
 }
 
 .nav-link:hover,
-.nav-link:focus {
+.nav-link:focus,
+.nav-link.focused {
   text-decoration: underline;
 }

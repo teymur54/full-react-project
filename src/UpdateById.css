@@ -47,3 +47,33 @@
   color: #ff6347;
   text-align: center;
 }
+
+.unique-label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.unique-select {
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  width: 100%;
+  font-size: 24px;
+}
+
+/* Additional styling for unique-select options */
+.unique-select option {
+  padding: 5px;
+}
+
+/* Styling for the unique-button */
+.unique-button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #0c983a;
+  color: #fff;
+  cursor: pointer;
+  font-size: 24px;
+}

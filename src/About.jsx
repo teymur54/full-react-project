@@ -1,9 +1,11 @@
 import React from 'react'
+import kursantVideo from './Assets/Kursant.mp4'
+import './About.css'
 
 const About = () => {
   return (
-    <div>
-      <h1>This is my about page</h1>
+    <div className='home-page'>
+      <video src={kursantVideo} autoPlay loop muted></video>
     </div>
   )
 }
